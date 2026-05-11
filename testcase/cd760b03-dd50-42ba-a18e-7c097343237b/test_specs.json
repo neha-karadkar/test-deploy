@@ -1,0 +1,18 @@
+{
+  "name": "Integration - Analyze Endpoint End-to-End Workflow",
+  "description": "Tests the full workflow of the /analyze endpoint, including chunk retrieval, LLM response generation, and formatting.",
+  "test_type": "integration",
+  "input": "POST request to /analyze endpoint with all dependencies available and configured",
+  "output": "AnalyzeResponse with success=True, result containing structured comparative analysis, error=None, tips=None",
+  "success_criteria": [
+    "response.status_code == 200",
+    "response.json()['success'] is True",
+    "response.json()['result'] contains expected comparative content",
+    "response.json()['error'] is None",
+    "response.json()['tips'] is None"
+  ],
+  "error_scenarios": [
+    "Azure Search or OpenAI API misconfigured",
+    "LLMService.generate_response raises exception"
+  ]
+}
