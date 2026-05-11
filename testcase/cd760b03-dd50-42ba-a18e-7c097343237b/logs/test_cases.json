@@ -1,0 +1,11 @@
+[
+  {
+    "id": "test_1",
+    "name": "Integration - Analyze Endpoint End-to-End Workflow",
+    "description": "Test: Integration - Analyze Endpoint End-to-End Workflow",
+    "type": "integration",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  }
+]
