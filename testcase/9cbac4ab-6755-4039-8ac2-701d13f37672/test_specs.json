@@ -1,0 +1,18 @@
+{
+  "name": "Functional - Analyze Endpoint Returns Structured Response",
+  "description": "Validates that the /analyze endpoint returns a structured, sectioned, cited comparative analysis of Earth and Jupiter when invoked.",
+  "test_type": "functional",
+  "input": "POST request to /analyze endpoint with no body (AnalyzeRequest has no fields)",
+  "output": "AnalyzeResponse with success=True, result containing structured text with headings and citations, error=None, tips=None",
+  "success_criteria": [
+    "response.status_code == 200",
+    "response.json()['success'] is True",
+    "response.json()['result'] contains headings and citations (e.g., 'Source: Earth.pdf')",
+    "response.json()['error'] is None",
+    "response.json()['tips'] is None"
+  ],
+  "error_scenarios": [
+    "Azure Search or OpenAI service unavailable",
+    "No relevant chunks found"
+  ]
+}
