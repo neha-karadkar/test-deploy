@@ -1,0 +1,16 @@
+{
+  "name": "Integration - Validation Exception Handler Returns Proper Error",
+  "description": "Validates that the FastAPI validation_exception_handler returns a proper error response for malformed JSON requests.",
+  "test_type": "integration",
+  "input": "POST request to /analyze endpoint with malformed JSON body",
+  "output": "JSON response with success=False, error message about malformed JSON, tips about formatting",
+  "success_criteria": [
+    "response.status_code == 422",
+    "response.json()['success'] is False",
+    "response.json()['error'] contains 'Malformed JSON request'",
+    "response.json()['tips'] contains 'Ensure your request body is valid JSON'"
+  ],
+  "error_scenarios": [
+    "RequestValidationError triggered by FastAPI"
+  ]
+}
