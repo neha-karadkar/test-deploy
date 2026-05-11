@@ -1,0 +1,15 @@
+{
+  "name": "Performance - ChunkRetriever Embedding and Search Latency",
+  "description": "Measures the latency of embedding creation and Azure Search chunk retrieval in ChunkRetriever.retrieve_chunks.",
+  "test_type": "performance",
+  "input": "Call ChunkRetriever.retrieve_chunks with a sample query and filter_titles",
+  "output": "Measured latency for embedding and search operations (trace_tool_call logs)",
+  "success_criteria": [
+    "Embedding creation latency is logged",
+    "Search operation latency is logged",
+    "Both latencies are within acceptable thresholds (e.g., < 2 seconds each)"
+  ],
+  "error_scenarios": [
+    "Embedding or search operation slow or unresponsive"
+  ]
+}
