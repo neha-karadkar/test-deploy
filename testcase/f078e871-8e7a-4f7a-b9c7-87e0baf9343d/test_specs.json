@@ -1,0 +1,16 @@
+{
+  "name": "Performance - Analyze Endpoint Response Time Under Load",
+  "description": "Measures the response time of the /analyze endpoint under concurrent requests to ensure it meets performance requirements.",
+  "test_type": "performance",
+  "input": "Multiple concurrent POST requests to /analyze endpoint",
+  "output": "Response times for each request, all within acceptable threshold (e.g., < 5 seconds)",
+  "success_criteria": [
+    "All responses return status_code == 200",
+    "Average response time < 5 seconds",
+    "No timeouts or failures under load"
+  ],
+  "error_scenarios": [
+    "Service overload",
+    "Timeouts from Azure Search or OpenAI"
+  ]
+}
