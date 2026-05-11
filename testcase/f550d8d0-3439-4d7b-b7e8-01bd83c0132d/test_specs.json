@@ -1,0 +1,14 @@
+{
+  "name": "Security - Configuration Validation for API Keys",
+  "description": "Validates that Config.validate() raises ValueError if required API keys are missing for the selected provider.",
+  "test_type": "security",
+  "input": "Call Config.validate() with MODEL_PROVIDER set to 'azure' and AZURE_OPENAI_API_KEY missing",
+  "output": "ValueError raised with message about missing AZURE_OPENAI_API_KEY",
+  "success_criteria": [
+    "ValueError is raised",
+    "Error message contains 'AZURE_OPENAI_API_KEY is required'"
+  ],
+  "error_scenarios": [
+    "API keys missing or misconfigured"
+  ]
+}
