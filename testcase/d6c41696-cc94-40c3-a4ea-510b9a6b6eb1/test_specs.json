@@ -1,0 +1,16 @@
+{
+  "name": "Integration - Observability Lifespan Initialization",
+  "description": "Validates that the FastAPI app initializes observability and logs configuration summary on startup.",
+  "test_type": "integration",
+  "input": "Startup of FastAPI app (app.lifespan)",
+  "output": "Log entries indicating configuration summary, content safety, and observability database connection",
+  "success_criteria": [
+    "Startup logs contain 'Agent Configuration Summary'",
+    "Startup logs contain 'Content Safety: Enabled' or 'Content Safety: Not Configured'",
+    "Startup logs contain 'Observability database connected' or warning if failed"
+  ],
+  "error_scenarios": [
+    "Observability database connection failure",
+    "Telemetry monitoring initialization failure"
+  ]
+}
