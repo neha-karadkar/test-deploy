@@ -1,0 +1,15 @@
+{
+  "name": "Performance - LLMService.generate_response Throughput",
+  "description": "Measures the throughput and latency of LLMService.generate_response for multiple requests.",
+  "test_type": "performance",
+  "input": "Multiple async calls to LLMService.generate_response with valid prompts and context_chunks",
+  "output": "Measured latency and throughput for LLM responses",
+  "success_criteria": [
+    "All responses are returned within acceptable latency (e.g., < 5 seconds)",
+    "No failures or timeouts",
+    "Trace logs record latency and token usage"
+  ],
+  "error_scenarios": [
+    "OpenAI API slow or unavailable"
+  ]
+}
