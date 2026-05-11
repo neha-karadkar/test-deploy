@@ -1,0 +1,11 @@
+[
+  {
+    "id": "test_1",
+    "name": "test_agent.py::test_unit_validation_exception_handler_security",
+    "description": "Test: test_agent.py::test_unit_validation_exception_handler_security",
+    "type": "security",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  }
+]
