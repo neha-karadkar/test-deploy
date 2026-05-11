@@ -1,0 +1,15 @@
+{
+  "name": "Security - Validation Exception Handler Prevents Information Leakage",
+  "description": "Ensures that the validation_exception_handler does not leak internal error details in its response.",
+  "test_type": "security",
+  "input": "POST request to /analyze endpoint with malformed JSON body",
+  "output": "JSON response with generic error message, no stack trace or internal details",
+  "success_criteria": [
+    "response.status_code == 422",
+    "response.json()['error'] does not contain internal error details or stack trace",
+    "response.json()['tips'] is generic and user-friendly"
+  ],
+  "error_scenarios": [
+    "Internal error details accidentally exposed"
+  ]
+}
