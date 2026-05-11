@@ -1,0 +1,11 @@
+[
+  {
+    "id": "test_1",
+    "name": "Functional - Analyze Endpoint Returns Structured Response",
+    "description": "Test: Functional - Analyze Endpoint Returns Structured Response",
+    "type": "functional",
+    "status": "passed",
+    "duration": 0.0,
+    "error": null
+  }
+]
