@@ -1,0 +1,2 @@
+Test Code Sanitization Warnings:
+  - Fixed 2 getattr() None-fallback pattern(s)
