@@ -1,0 +1,17 @@
+{
+  "name": "Functional - Analyze Endpoint Handles No Context Found",
+  "description": "Validates that the /analyze endpoint returns a fallback response when no relevant chunks are found in the knowledge base.",
+  "test_type": "functional",
+  "input": "POST request to /analyze endpoint with knowledge base empty or chunk retrieval mocked to return empty list",
+  "output": "AnalyzeResponse with success=False, result=None, error containing fallback message, tips containing suggestion",
+  "success_criteria": [
+    "response.status_code == 200",
+    "response.json()['success'] is False",
+    "response.json()['result'] is None",
+    "response.json()['error'] contains 'could not be found'",
+    "response.json()['tips'] contains 'rephrase your query'"
+  ],
+  "error_scenarios": [
+    "ChunkRetriever.retrieve_chunks returns empty list"
+  ]
+}
